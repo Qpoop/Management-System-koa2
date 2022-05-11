@@ -1,0 +1,14 @@
+[2022-05-11T17:15:51.575] [ERROR] error - ReferenceError: ctx is not defined
+    at D:\code\Management-System\Management-System-koa2\manager-server\app.js:33:3
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at views (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-views\src\index.js:91:12)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at serve (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-static\index.js:53:15)
+    at async bodyParser (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-bodyparser\index.js:95:5)
+[2022-05-11T17:16:08.068] [ERROR] error - ReferenceError: ctx is not defined
+    at D:\code\Management-System\Management-System-koa2\manager-server\app.js:33:3
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at views (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-views\src\index.js:91:12)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at serve (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-static\index.js:53:15)
+    at async bodyParser (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-bodyparser\index.js:95:5)
