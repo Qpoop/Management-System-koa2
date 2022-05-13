@@ -19,6 +19,8 @@
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
+    "log4js": "^6.4.6",
+    "mongoose": "^6.3.3",
     "pug": "^2.0.3"
   },
   "devDependencies": {

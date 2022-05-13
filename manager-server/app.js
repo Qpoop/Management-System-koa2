@@ -4,14 +4,17 @@ const views = require("koa-views");
 const json = require("koa-json");
 const onerror = require("koa-onerror");
 const bodyparser = require("koa-bodyparser");
+const router = require("koa-router")();
 
 const log4js = require("./utils/log4j");
 
-const index = require("./routes/index");
 const users = require("./routes/users");
 
 // error handler
 onerror(app);
+
+// db
+require("./config/db");
 
 // middlewares
 app.use(
@@ -31,13 +34,16 @@ app.use(
 
 // logger
 app.use(async (ctx, next) => {
+  log4js.info(`get params:${JSON.stringify(ctx.request.query)}`);
+  log4js.info(`get params:${JSON.stringify(ctx.request.body)}`);
   await next();
-  log4js.info("log output");
 });
 
 // routes
-app.use(index.routes(), index.allowedMethods());
-app.use(users.routes(), users.allowedMethods());
+router.prefix("/api");
+router.use(users.routes(), users.allowedMethods());
+
+app.use(router.routes(), router.allowedMethods());
 
 // error-handling
 app.on("error", (err, ctx) => {
