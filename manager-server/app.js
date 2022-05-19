@@ -5,10 +5,12 @@ const json = require("koa-json");
 const onerror = require("koa-onerror");
 const bodyparser = require("koa-bodyparser");
 const router = require("koa-router")();
+const koajwt = require("koa-jwt");
 
 const log4js = require("./utils/log4j");
 
 const users = require("./routes/users");
+const util = require("./utils/util");
 
 // error handler
 onerror(app);
@@ -35,13 +37,26 @@ app.use(
 // logger
 app.use(async (ctx, next) => {
   log4js.info(`get params:${JSON.stringify(ctx.request.query)}`);
-  log4js.info(`get params:${JSON.stringify(ctx.request.body)}`);
-  await next();
+  log4js.info(`post params:${JSON.stringify(ctx.request.body)}`);
+  await next().catch((err) => {
+    console.log("err-----------", err.status);
+    if (err.status === 401) {
+      ctx.status = 401;
+      ctx.body = util.fail("Token认证失败", util.CODE.AUTH_ERROR);
+    } else {
+      throw err;
+    }
+  });
 });
+
+app.use(koajwt({ secret: "huang" }).unless({ path: [/^\/api\/users\/login/] }));
 
 // routes
 router.prefix("/api");
 router.use(users.routes(), users.allowedMethods());
+router.get("/leave/count", (ctx) => {
+  ctx.body = "body";
+});
 
 app.use(router.routes(), router.allowedMethods());
 

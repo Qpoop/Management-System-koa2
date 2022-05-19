@@ -1,0 +1,76 @@
+[2022-05-14T15:21:25.614] [ERROR] error - UnauthorizedError: Authentication Error
+    at Object.throw (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa\lib\context.js:97:11)
+    at jwt (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-jwt\lib\index.js:23:22)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at D:\code\Management-System\Management-System-koa2\manager-server\app.js:41:9
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at views (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-views\src\index.js:91:12)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at serve (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-static\index.js:53:15)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at filter (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-json\index.js:25:12)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at bodyParser (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-bodyparser\index.js:95:11)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+[2022-05-14T15:22:04.874] [ERROR] error - UnauthorizedError: Authentication Error
+    at Object.throw (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa\lib\context.js:97:11)
+    at jwt (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-jwt\lib\index.js:23:22)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at D:\code\Management-System\Management-System-koa2\manager-server\app.js:41:9
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at views (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-views\src\index.js:91:12)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at serve (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-static\index.js:53:15)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at filter (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-json\index.js:25:12)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at bodyParser (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-bodyparser\index.js:95:11)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+[2022-05-14T15:22:07.751] [ERROR] error - UnauthorizedError: Authentication Error
+    at Object.throw (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa\lib\context.js:97:11)
+    at jwt (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-jwt\lib\index.js:23:22)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at D:\code\Management-System\Management-System-koa2\manager-server\app.js:41:9
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at views (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-views\src\index.js:91:12)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at serve (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-static\index.js:53:15)
+    at async bodyParser (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-bodyparser\index.js:95:5)
+[2022-05-14T15:23:11.067] [ERROR] error - UnauthorizedError: Authentication Error
+    at Object.throw (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa\lib\context.js:97:11)
+    at jwt (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-jwt\lib\index.js:23:22)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at D:\code\Management-System\Management-System-koa2\manager-server\app.js:41:9
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at views (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-views\src\index.js:91:12)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at serve (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-static\index.js:53:15)
+    at async bodyParser (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-bodyparser\index.js:95:5)
+[2022-05-14T15:23:34.879] [ERROR] error - UnauthorizedError: Authentication Error
+    at Object.throw (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa\lib\context.js:97:11)
+    at jwt (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-jwt\lib\index.js:23:22)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at D:\code\Management-System\Management-System-koa2\manager-server\app.js:41:9
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at views (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-views\src\index.js:91:12)
+    at dispatch (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-compose\index.js:42:32)
+    at serve (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-static\index.js:53:15)
+    at async bodyParser (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-bodyparser\index.js:95:5)
+[2022-05-14T15:25:46.449] [ERROR] error - UnauthorizedError: Authentication Error
+    at Object.throw (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa\lib\context.js:97:11)
+    at jwt (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-jwt\lib\index.js:66:26)
+    at async D:\code\Management-System\Management-System-koa2\manager-server\app.js:41:3
+    at async serve (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-static\index.js:53:9)
+    at async bodyParser (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-bodyparser\index.js:95:5)
+[2022-05-14T15:27:28.395] [ERROR] error - UnauthorizedError: Authentication Error
+    at Object.throw (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa\lib\context.js:97:11)
+    at jwt (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-jwt\lib\index.js:66:26)
+    at async D:\code\Management-System\Management-System-koa2\manager-server\app.js:41:3
+    at async serve (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-static\index.js:53:9)
+    at async bodyParser (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-bodyparser\index.js:95:5)
+[2022-05-14T15:32:07.879] [ERROR] error - UnauthorizedError: Authentication Error
+    at Object.throw (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa\lib\context.js:97:11)
+    at jwt (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-jwt\lib\index.js:66:26)
+    at async D:\code\Management-System\Management-System-koa2\manager-server\app.js:41:3
+    at async serve (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-static\index.js:53:9)
+    at async bodyParser (D:\code\Management-System\Management-System-koa2\manager-server\node_modules\koa-bodyparser\index.js:95:5)
