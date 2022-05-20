@@ -25,7 +25,7 @@ router.post("/login", async (ctx) => {
         data,
       },
       "huang",
-      { expiresIn: "1h" }
+      { expiresIn: "1d" }
     );
     if (res) {
       ctx.body = utils.success({ ...data, token });
