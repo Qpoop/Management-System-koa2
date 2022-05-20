@@ -922,3 +922,4 @@
 [2022-05-20T12:01:23.639] [INFO] info - get params:{"menuName":"","menuState":"1"}
 [2022-05-20T12:01:23.639] [INFO] info - post params:{}
 >>>>>>> menu
+[2022-05-20T12:08:32.155] [INFO] info - ***数据库链接成功***
