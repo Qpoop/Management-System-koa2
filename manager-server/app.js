@@ -10,6 +10,7 @@ const koajwt = require("koa-jwt");
 const log4js = require("./utils/log4j");
 
 const users = require("./routes/users");
+const menus = require("./routes/menus");
 const util = require("./utils/util");
 
 // error handler
@@ -54,6 +55,8 @@ app.use(koajwt({ secret: "huang" }).unless({ path: [/^\/api\/users\/login/] }));
 // routes
 router.prefix("/api");
 router.use(users.routes(), users.allowedMethods());
+router.use(menus.routes(), menus.allowedMethods());
+
 router.get("/leave/count", (ctx) => {
   ctx.body = "body";
 });
