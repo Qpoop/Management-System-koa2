@@ -21,7 +21,6 @@ function getTreeMenu(rootList, id, list) {
   for (let i = 0; i < rootList.length; i++) {
     let item = rootList[i];
     if (String(item.parentId.slice().pop()) === String(id)) {
-      console.log("item", item);
       list.push(item._doc);
     }
   }

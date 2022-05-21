@@ -11,6 +11,7 @@ const log4js = require("./utils/log4j");
 
 const users = require("./routes/users");
 const menus = require("./routes/menus");
+const roles = require("./routes/roles");
 const util = require("./utils/util");
 
 // error handler
@@ -56,6 +57,7 @@ app.use(koajwt({ secret: "huang" }).unless({ path: [/^\/api\/users\/login/] }));
 router.prefix("/api");
 router.use(users.routes(), users.allowedMethods());
 router.use(menus.routes(), menus.allowedMethods());
+router.use(roles.routes(), roles.allowedMethods());
 
 router.get("/leave/count", (ctx) => {
   ctx.body = "body";
