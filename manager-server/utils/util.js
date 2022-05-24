@@ -2,6 +2,7 @@
  * 通用工具函数封装
  */
 const log4js = require("./log4j");
+const jwt = require("jsonwebtoken");
 const CODE = {
   SUCCESS: 200,
   PARAM_ERROR: 10001, //参数错误
@@ -49,4 +50,31 @@ module.exports = {
     };
   },
   CODE,
+  decoded(authorization) {
+    if (authorization) {
+      let token = authorization.split(" ")[1];
+      return jwt.verify(token, "huang");
+    }
+    return "";
+  },
+  // 递归拼接树形列表
+  getTreeMenu(rootList, id, list) {
+    for (let i = 0; i < rootList.length; i++) {
+      let item = rootList[i];
+      if (String(item.parentId.slice().pop()) === String(id)) {
+        list.push(item._doc);
+      }
+    }
+    list.map((item) => {
+      item.children = [];
+      this.getTreeMenu(rootList, item._id, item.children);
+      if (item.children.length === 0) {
+        delete item.children;
+      } else if (item.children[0].menuType === 2) {
+        // 快速区分按钮和菜单
+        item.action = item.children;
+      }
+    });
+    return list;
+  },
 };

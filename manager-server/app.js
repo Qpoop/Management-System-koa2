@@ -12,6 +12,7 @@ const log4js = require("./utils/log4j");
 const users = require("./routes/users");
 const menus = require("./routes/menus");
 const roles = require("./routes/roles");
+const depts = require("./routes/depts");
 const util = require("./utils/util");
 
 // error handler
@@ -58,6 +59,7 @@ router.prefix("/api");
 router.use(users.routes(), users.allowedMethods());
 router.use(menus.routes(), menus.allowedMethods());
 router.use(roles.routes(), roles.allowedMethods());
+router.use(depts.routes(), depts.allowedMethods());
 
 router.get("/leave/count", (ctx) => {
   ctx.body = "body";

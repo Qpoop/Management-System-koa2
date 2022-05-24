@@ -1,6 +1,8 @@
 const router = require("koa-router")();
 
 const User = require("./../models/userSchema");
+const Menu = require("./../models/menuSchema");
+const Role = require("./../models/roleSchema");
 const Counter = require("./../models/counterSchema");
 const utils = require("./../utils/util");
 const jwt = require("jsonwebtoken");
@@ -15,7 +17,7 @@ router.post("/login", async (ctx) => {
     const res = await User.findOne(
       {
         userName,
-        userPwd,
+        userPwd: md5(userPwd),
       },
       "userId userName userEmail state role deptId roleList"
     );
@@ -60,6 +62,15 @@ router.get("/list", async (ctx) => {
       },
       list,
     });
+  } catch (error) {
+    ctx.body = utils.fail(`查询异常:${error.stack}`);
+  }
+});
+
+router.get("/all/list", async (ctx) => {
+  try {
+    const list = await User.find({}, "userId userName userEmail");
+    ctx.body = utils.success(list);
   } catch (error) {
     ctx.body = utils.fail(`查询异常:${error.stack}`);
   }
@@ -148,4 +159,55 @@ router.post("/operate", async (ctx) => {
     }
   }
 });
+
+// 获取用户对应的权限菜单
+router.get("/getPermissionList", async (ctx) => {
+  let authorization = ctx.request.headers.authorization;
+  let { data } = utils.decoded(authorization);
+  let menuList = await getMenuList(data.role, data.roleList);
+  let actionList = getActionList(JSON.parse(JSON.stringify(menuList)));
+  ctx.body = utils.success({ menuList, actionList });
+});
+
+async function getMenuList(userRole, roleKeys) {
+  let rootList = [];
+  if (userRole === 0) {
+    rootList = (await Menu.find({})) || [];
+  } else {
+    // 根据用户拥有的角色，获取权限列表
+    // 先获取用户的角色
+    let roleList = await Role.find({ _id: { $in: roleKeys } });
+    let permissionList = [];
+    roleList.map((role) => {
+      let { checkedKeys, halfCheckedKeys } = role.permissionList;
+      permissionList = permissionList.concat([
+        ...checkedKeys,
+        ...halfCheckedKeys,
+      ]);
+    });
+    permissionList = [...new Set(permissionList)];
+    rootList = await Menu.find({ _id: { $in: permissionList } });
+  }
+  return utils.getTreeMenu(rootList, null, []);
+}
+
+// 获取按钮列表
+function getActionList(list) {
+  const actionList = [];
+  const deep = (arr) => {
+    while (arr.length) {
+      let item = arr.pop();
+      if (item.action) {
+        item.action.map((action) => {
+          actionList.push(action.menuCode);
+        });
+      }
+      if (item.children && !item.action) {
+        deep(item.children);
+      }
+    }
+  };
+  deep(list);
+  return actionList;
+}
 module.exports = router;
